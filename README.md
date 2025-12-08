@@ -8,10 +8,15 @@ Both experiments showed better results than the model which used embedding only 
 This research is about training coefficients to aggregate the embeddings and put it to the frozen unet model.
 The dataset was prepaired in the following way:
 
-For each prompt, embeddings were extracted from 24 layers of text encoder and also for each prompt the "teacher" (DeepFloyd/IF-I-XL) model generated images.
+For each prompt, embeddings were extracted from 24 layers of text encoder and also for each prompt the "teacher" model (DeepFloyd/IF-I-XL) generated images.
 
-All experiments were carried out on a model DeepFloyd/IF-I-M
-Since there are 24 embeddings , 24 coefficients were trained in the first experiment.
+All experiments were carried out on a model DeepFloyd/IF-I-M with 25 diffusion steps.
+Since there are 24 embeddings , 24 coefficients were trained in the first experiment with lpips loss with the teacher's generated images and then in another setup with lpips+hpsv2.
+The best model had 21.4 hpsv2 score on validation dataset (M model with embeddings only from the last layer had 22.5). [train logging](https://app.neptune.ai/o/nastya/org/transformer/runs/details?viewId=a06ed0b2-5308-4ddd-af35-f748aa3e7f12&detailsTab=metadata&shortId=TRAN-408&type=run)
+
+In the second experiment 600 coefficients were trained (24 coefficients for each of 25 diffusion steps). The best model had 20.33 hpsv2 score. [train logging](https://app.neptune.ai/o/nastya/org/transformer/runs/details?viewId=a06ed0b2-5308-4ddd-af35-f748aa3e7f12&detailsTab=metadata&shortId=TRAN-352&type=run&path=.)
+
+
 
 
 
