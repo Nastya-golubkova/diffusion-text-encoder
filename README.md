@@ -16,7 +16,4 @@ The best model had 21.4 hpsv2 score on validation dataset (M model with embeddin
 
 In the second experiment 600 coefficients were trained (24 coefficients for each of 25 diffusion steps). The best model had 20.33 hpsv2 score. [train logging](https://app.neptune.ai/o/nastya/org/transformer/runs/details?viewId=a06ed0b2-5308-4ddd-af35-f748aa3e7f12&detailsTab=metadata&shortId=TRAN-352&type=run&path=.)
 
-
-
-
-
+The study was conducted under the scientific supervision of [Aliev Mishan](https://github.com/thecrazymage).
